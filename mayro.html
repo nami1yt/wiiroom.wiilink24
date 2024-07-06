@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="sharedcode/common.css">
+		
+	<style>
+	
+
+	
+	
+	
+	
+	</style>
+
+
+</head>
+
+
+<body>
+
+    <div class="nav">
+
+			<a href=index.html><img class=navlogo style="padding-top:10px;width:150px;height:auto;" src=graphics/logos/Wii_Link_Logo.png></a>
+			
+		<div class=ctrlposition style="display:inline-block;">	
+			<a href=""><img class=browserctrlfresh onclick="refreshPage()" src=graphics/buttons/refresh.png></a>
+			<img class=browserctrldiv src=graphics/buttons/divider.jpg>			
+			<a href=""><img class=browserctrl onclick="goForward()" src=graphics/buttons/forward.png></a>
+			<a href=""><img class=browserctrl onclick="goBack()" src=graphics/buttons/back.png></a>
+		</div>
+
+    </div>
+	
+
+
+
+
+
+		<div class=sidebar style="position: fixed;">
+			<div class=sidebuttons style="position: fixed;padding-top:120px;text-align:center;">
+			
+				<a class=navbutton href=index.html><img style="width:27px;height:auto;vertical-align: middle;padding:0px 5px 5px 0px;" src=graphics/buttons/home.png><b>Home</b></a>
+					<div style="padding-top:3px;"></div>
+				<a class=navbutton href=services.html><img style="width:27px;height:auto;vertical-align: middle;padding:0px 5px 5px 0px;" src=graphics/buttons/services.png><b>Services</b></a>					
+					<div style="padding-top:3px;"></div>
+				<a class=navbutton href=credits.html><img style="width:27px;height:auto;vertical-align: middle;padding:0px 5px 5px 0px;" src=graphics/buttons/web.png><b>Credits</b></a>
+					<div style="padding-top:3px;"></div>
+				<a class=navbutton href=extras.html><img style="width:27px;height:auto;vertical-align: middle;padding:0px 5px 5px 0px;" src=graphics/buttons/guide.png><b>Extras</b></a>					
+	
+			</div>
+
+		</div>
+	
+	
+
+	<div style="padding-top:70px;padding-left:160px;">
+
+
+			<p><img style="vertical-align:middle;" src=graphics/Logos/mayro.png>Hiiiya, I made the site!</p>
+
+
+		
+		
+	</div>
+	
+	
+	<div class=footer>
+			<img id=footerImage style="padding-top:70px;padding-left:126px;width:100%;display:block;" src="">
+			<img class=footertextsidebar style="width:120px;padding-top:80px;height:auto;" src=graphics/logos/logo.png><p style="padding-top:175px;font-size:19px;" class=footertextsidebar><img style="width:27px;height:auto;vertical-align:middle;display:inline;padding:0px 5px 5px 0px;" src=graphics/buttons/web.png>Site by <a href=mayro.html><img style="width:27px;height:auto;vertical-align:middle;display:inline;padding-bottom:5px;" src=graphics/logos/Mayro.png>KingMayro</a></p><p style="font-size:19px;padding-top:210px;" class=footertextsidebar><img style="width:27px;height:auto;vertical-align:middle;display:inline;padding:0px 5px 5px 0px;" src=graphics/buttons/email.png>contact@wiilink24.com</p>
+			<p style="padding:75px 60px 0px 0px;font-size:40px;border-bottom: 2px solid;" class=footertextrightsidebar>Socials</p><p style="padding-top:135px;font-size:19px;" class=footertextrightsidebar><img style="width:32px;height:auto;vertical-align:middle;display:inline;padding:0px 5px 5px 0px;" src=graphics/logos/discord.png>discord.gg/wiilink<br><img style="width:32px;height:auto;vertical-align:middle;display:inline;padding:0px 5px 5px 0px;" src=graphics/logos/twitter.png>@WiiLink24<br><img style="width:32px;height:auto;vertical-align:middle;display:inline;padding:0px 5px 5px 0px;" src=graphics/logos/github.png>WiiLink24<br><img style="width:32px;height:auto;vertical-align:middle;display:inline;padding:0px 5px 5px 0px;" src=graphics/logos/youtube.png>@wiilink</p>
+			<div class=footertextcentersidebar style="display:inline-block;vertical-align:top;"><a href=tos.html><p class=footerlegaltexttos style="display:inline-block;"><img style="width:17px;height:auto;vertical-align:middle;display:inline;padding:0px 5px 2px 0px;" src=graphics/buttons/arrow.png>Terms of Service</p></a> <a href=privacy.html><p class=footerlegaltextprivacy style="display:inline-block;"><img style="width:17px;height:auto;vertical-align:middle;display:inline;padding:0px 5px 2px 0px;" src=graphics/buttons/arrow.png>Privacy Policy</p></a> <a href=eula.html><p class=footerlegaltexteula style="display:inline-block;"><img style="width:17px;height:auto;vertical-align:middle;display:inline;padding:0px 5px 2px 0px;" src=graphics/buttons/arrow.png>EULA</p></a></div>
+	</div>
+	
+	
+	
+	
+</body>
+
+<script src="sharedcode/global.js"></script>
+
+    <script>
+		
+
+        function refreshPage() {
+            location.reload();
+        }
+
+        function goBack() {
+            history.back();
+        }
+
+        function goForward() {
+            history.forward();
+        }
+		
+    </script>
+
+
+</html>
