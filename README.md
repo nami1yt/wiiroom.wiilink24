@@ -20,7 +20,7 @@ It still provides some functionality like News and Service information.
 
 
 
-# Check out our other projects on GitHub!
+## Check out our other projects on GitHub!
 [![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=WiiLink24&repo=web)](https://github.com/WiiLink24/web)
 [![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=WiiLink24&repo=WiiLink24-Patcher)](https://github.com/WiiLink24/WiiLink24-Patcher)
 
