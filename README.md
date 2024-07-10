@@ -4,8 +4,8 @@
 </p>
 
 
-A website where you can download our products, as well as getting up to date with our advancements, getting assistance with our products, and informing yourself in the status of them.
-#### All the fun people who've contributed:
+A more downgraded version of the WiiLink website made for Wii Room users. It still provides some functionality like News and Service information.
+#### Here's everyone who contributed:
 <a href = "https://github.com/WiiLink24/web/graphs/contributors">
   <img src = "https://contrib.rocks/image?repo=KingMayro/wiiroom.wiilink24"/>
 </a>
