@@ -35,7 +35,7 @@
 		
 
 
-
+	// not working rn
 		(function() {
 			var disableRedirection = true;
 
@@ -54,6 +54,11 @@
 				}
 			}
 		})();
+		
+	// temp fix
+	if (window.innerWidth > 458) {
+    window.location.href = "https://www.wiilink24.com";
+	}
 		
 		
 		
