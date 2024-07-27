@@ -37,7 +37,7 @@
 
 
 		(function() {
-			var disableRedirection = false;
+			var disableRedirection = true;
 
 			if (!disableRedirection) {
 				var userAgent = navigator.userAgent;
