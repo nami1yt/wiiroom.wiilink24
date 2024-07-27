@@ -54,13 +54,3 @@
 				}
 			}
 		})();
-		
-	// temp fix
-        document.addEventListener("DOMContentLoaded", function() {
-            if (window.innerHeight > 458) {
-                window.location.href = "https://www.wiilink24.com";
-            }
-        });
-		
-		
-		
