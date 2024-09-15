@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="sharedcode/common.css">
+		
+	<style>
+	
+	.textbox {
+	background-color:#161515;
+	padding:20px;
+	width:598px;
+	}	
+	
+	.sitename {
+	font-size:50px;
+	vertical-align:top;
+	margin:0;
+	}
+	
+	.gotobutton {
+	width:94%;
+	font-size:25px;
+	text-align:center;
+	background-color:#24a1ca;
+	padding:15px;
+	}
+
+	.gotobutton:hover {
+	opacity:0.8;
+	}
+	
+	.gotobutton:active {
+	opacity:0.5;
+	}
+	
+	.gotobutton2 {
+	width:94%;
+	font-size:25px;
+	text-align:center;
+	background-color:#E37383;
+	padding:15px;
+	}
+	
+	.gotobutton2:hover {
+	opacity:0.8;
+	}
+	
+	.gotobutton2:active {
+	opacity:0.5;
+	}
+	
+	.paddingforgoto {
+	padding-left:50px;
+	padding-right:50px;
+	}
+
+	@media screen and (max-width: 609px) {
+		.textbox {
+		background-color:#161515;
+		padding:20px;
+		width:374px;
+		}
+		
+		.sitename {
+		float:none;
+		display:block;
+		}
+		
+		.paddingforgoto {
+		padding-left:40px;
+		padding-right:50px;
+		}
+		
+	}	
+	
+	
+	</style>
+
+
+</head>
+
+
+<body>
+
+    <div class="nav">
+
+			<a href=index.html><img class=navlogo style="padding-top:10px;width:150px;height:auto;" src=graphics/logos/Wii_Link_Logo.png></a>
+			
+		<div class=ctrlposition style="display:inline-block;">	
+			<a href=""><img class=browserctrlfresh onclick="refreshPage()" src=graphics/buttons/refresh.png></a>
+			<img class=browserctrldiv src=graphics/buttons/divider.jpg>			
+			<a href=""><img class=browserctrl onclick="goForward()" src=graphics/buttons/forward.png></a>
+			<a href=""><img class=browserctrl onclick="goBack()" src=graphics/buttons/back.png></a>
+		</div>
+
+    </div>
+	
+
+
+
+
+
+		<div class=sidebar style="position: fixed;">
+			<div class=sidebuttons style="position: fixed;padding-top:120px;text-align:center;">
+			
+				<a class=navbutton href=index.html><b>Home</b></a>
+					<div style="padding-top:3px;"></div>
+				<a class=navbutton href=shows.html><b>Shows</b></a>					
+					<div style="padding-top:3px;"></div>
+				<a class=navbutton href=episodes.html><b>Episodes</b></a>
+					<div style="padding-top:3px;"></div>
+				<a class=navbutton href=schedule.html><b>Schedule</b></a>		
+					<div style="padding-top:3px;"></div>
+				<a class=navbutton href=credits.html><b>Credits</b></a>	
+				<img src="graphics/bg/wave.png"  style="position:fixed; bottom:0px; left:0px;">
+	
+			</div>
+
+		</div>
+	
+<div style="padding-top:70px;">
+	
+		<p style="text-align:center;padding:10px;padding-left:145px;background-color:#24a1ca;font-size:18px;"><b>Homebrew Tea</b><br>Created by GamerKGR and edited by ryaltheamazing.</p>
+	</div>
+
+
+	<div style="padding-left:160px;">
+
+
+	<div> <center>
+	<img src="graphics/logos/homebrewtealogo.png" width=300 hight=300>
+			<p class=innertextbox>Homebrew Tea is a news show where the host, Kolton, "spills the tea" on the latest homebrew news. Covering homebrew from a variety of systems, the show is pack full of must-know information that you don't want to miss out on!</p>
+	<img src="graphics/logos/homebrewteaxtraslogo.png" width=300 hight=300>
+			<p class=innertextbox>Bonus episodes exist, too, named Homebrew Tea XTRAS. Various antics occur in these episodes, including blooper reels, behind the scenes, vlogs, tutorials, and more!<p>
+			<div class=paddingforgoto>
+				<a href="homebrewteaschedule.html"><p class=gotobutton2>Schedule</p></a>
+			</div>		
+		</div>
+	</div>	
+
+	
+	
+</body>
+
+<script src="sharedcode/global.js"></script>
+
+    <script>
+		
+
+        function refreshPage() {
+            location.reload();
+        }
+
+        function goBack() {
+            history.back();
+        }
+
+        function goForward() {
+            history.forward();
+        }
+		
+    </script>
+
+
+</html>
