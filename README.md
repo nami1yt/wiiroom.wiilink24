@@ -27,3 +27,7 @@ Some things are also planned for the future of this site, such as:
 [![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=WiiLink24&repo=WiiLink24-Patcher)](https://github.com/WiiLink24/WiiLink24-Patcher)
 [![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=WiiLink24&repo=room-server)](https://github.com/WiiLink24/room-server)
 [![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=WiiLink24&repo=food-server)](https://github.com/WiiLink24/food-server)
+
+## View the websites here:
+<a href = "https://wiiroom.wiilink24.com/index.html">WiiLink Wii Room Website</a>
+<a href = "https://wiiroom.wiilink24.com/originals/index.html>WiiLink Originals Program List</a>
