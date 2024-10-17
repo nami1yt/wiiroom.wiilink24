@@ -30,4 +30,4 @@ Some things are also planned for the future of this site, such as:
 
 ## View the websites here:
 <p> <a href = "https://wiiroom.wiilink24.com/index.html">WiiLink Wii Room Website </a> </p>
-<p> <a href = "https://wiiroom.wiilink24.com/originals/index.html>WiiLink Originals Program List </a> </p>
+<p> <a href = "https://wiiroom.wiilink24.com/originals/index.html">WiiLink Originals Program List </a> </p>
