@@ -1,0 +1,62 @@
+/* Some styles to alter pages that should display full-width (no side margins/padding) on mobile */
+
+
+/* Examples include: news article page, flipnote view page */
+
+
+/* Changes to the layout under "xs-only" breakpoint */
+
+
+/*
+.body-fullwidth-mobile {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  padding-top: 60px !important;
+  padding-bottom: 0px !important;
+}
+*/
+
+@media (max-width: 575.98px) {
+    /* Flipnote View Page specifics here */
+    .flipnote-player-card {
+        border-top: 0 !important;
+    }
+    /* Added due to our Vapor theme */
+    .flipnote-container {
+        border: none;
+        border-radius: 0px;
+    }
+    /* Sticky Flipnote Player, except when the software keyboard is open */
+    /*
+  @media (max-aspect-ratio: 3/4) {
+    .flipnote-player-card {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      top: 60px;
+    }
+  }
+	*/
+    /* Global rules for fullwidth-on-mobile pages */
+    .card,
+    .card-header:first-child,
+    .card>*:last-child,
+    .card>*:first-child {
+        border-radius: 0px !important;
+    }
+    .row {
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+    }
+    body>.row {
+        max-width: unset;
+    }
+    div.panel-common {
+        border-left: none !important;
+        border-right: none !important;
+    }
+    body.body-fullwidth-mobile {
+        padding: 60px 0 0 0 !important;
+    }
+}

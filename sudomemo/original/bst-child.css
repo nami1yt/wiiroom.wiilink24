@@ -1,0 +1,389 @@
+/*
+
+We pull in three stylesheets from Theatre:
+
+main.css
+theme_new_stars.css
+fullwidth-mobile.css
+
+Anything that differs from Theatre should go here.
+
+Justify each override
+
+*/
+
+:root {
+    --theatre-green: var(--theatre-primary);
+}
+
+
+/* Override: larger star background */
+
+
+/* TODO: Maybe match Theatre */
+
+.bg-light-stars {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABABAMAAABYR2ztAAAAD1BMVEXz9/nt8/X8/Pzw9ff3+fsdudtwAAABK0lEQVRIx+2UUYrEIBBEzcQDpPECjXgAw1xAhtz/TLtGo93lSvZrYGDqI6HhpVKSdJn3aY03wLLp2TIAu9PzAwEiPb88RCDSITwAC5EKYb1nHYHIqQgaWJ/0q2eUEbwXTze54n/4U0caACr5uuoJmrby/qaAFmXuQKoZhYGyCBjzmpVBs2gGzYLNDLBgcA8sfwMMAGRAQHyuEdjzCTXAVgP5KgHOl9CBcqP2scOJdQB1XLevRqWbvngw9gUCYdIXs3UnGoA09AWuO/YFAgH7At6gQ7Q9a3VQC6HXiagU7AMSMtAHXAPCuksDbRGhDxgKxWEfXDMYjKu2g4Gxk0K5AyICPHXADMs/ASeBZPUptlUCr5zPit7M7qsE0hm1A/GM6vCXt9cc62HMp+gHHIo+P3KnB8oAAAAASUVORK5CYII=);
+}
+
+
+/* Override: larger star background */
+
+
+/* TODO: Maybe match Theatre */
+
+.bg-dark-stars {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABAAgMAAADXB5lNAAAACVBMVEUvMTYsLjMyNTlqJR8eAAAA0UlEQVQ4y9WSQQqDMBBFf4RAcZ99lyWnyBGyyNzHo7gsOWWZ/HQwDSIUuuggfHz6J4gP341LZ2Dr6TNzmcDeQSjMdQLPDkSYsYMgUggqn7fRRq37EdQ2bLRO1Hvd4hXk1mDHKUjAomB7L9FUMBwbucIAj70CYyWeg+yFH7sSCECwLQQZ8JoPvf5jqAU1mIFpQQ3OQMGHBhOQDmodxRktMC/ME/PC3qAX5ol5YZ7YUvPEfqHpSQ0uwFiJ12BfCUoQAqABSY7gDtw0CxBwnAQ4/GZeZdl6cwu93uMAAAAASUVORK5CYII=);
+}
+
+
+/* fullwidth
+
+
+/* Help Center articles */
+
+#content article {
+    margin-bottom: 0px;
+}
+
+#content footer {
+    padding-bottom: 0px;
+}
+
+a.post-title-link {
+    color: inherit;
+}
+
+
+/* Adjust padding for article titles */
+
+.theme-panel-title {
+    padding: 10px;
+}
+
+
+/* Box shadow on articles */
+
+.card {
+    box-shadow: 0 3px 12px -4px black;
+    border-radius: 7px;
+}
+
+
+/* search result preview formatting */
+
+div.search-result>div:nth-child(1)>img {
+    max-width: 100%;
+    margin-bottom: 10px;
+}
+
+@media(min-width: 576px) {
+    div.search-result>div:nth-child(1)>img {
+        max-width: 200px;
+        margin-bottom: 0px;
+    }
+}
+
+
+/*
+* Sidebar Overrides
+*
+* These are only used on certain pages like in search results
+* TODO: Where are sidebars used?
+*/
+
+form#searchform {
+    display: flex;
+}
+
+form#searchform>button#searchsubmit {
+    border-radius: 0px 5px 5px 0px;
+}
+
+form#searchform>input#s {
+    width: 80%;
+    border-radius: 5px 0px 0px 5px;
+}
+
+.sidebar-section {
+    margin-bottom: 10px;
+}
+
+
+/* body padding: padded at top for navbar */
+
+body {
+    padding: 47px 0px 0px 0px;
+}
+
+
+/* New Navbar styles */
+
+
+/* On mobile, fix scrolling and max-height for navbar */
+
+@media (max-width: 767px) {
+    .navbar-collapse {
+        max-height: 60vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+    .collapsing {
+        overflow-y: hidden;
+        overflow-x: hidden;
+    }
+}
+
+
+/* unset default colors for h# tags */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: unset;
+    font-weight: unset;
+    line-height: unset;
+}
+
+.form-control:focus {
+    box-shadow: none;
+}
+
+.form-control-underlined {
+    border-width: 0;
+    border-bottom-width: 1px;
+    border-radius: 0;
+    padding-left: 0;
+}
+
+.form-control::placeholder {
+    font-size: 0.95rem;
+    color: #aaa;
+    font-style: italic;
+}
+
+.has-search .form-control {
+    padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}
+
+.has-search input::placeholder {
+    font-style: unset;
+    font-size: 18px;
+}
+
+ul.help-categories li {
+    display: inline-block;
+    list-style: none;
+    border: 1px solid black;
+    height: 210px;
+    width: 250px;
+    background-color: #fff;
+    box-shadow: 0px 2px 2px 1px rgba(212, 212, 212, 1);
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    margin: 8px;
+}
+
+ul.help-categories li>a {
+    outline: 0;
+}
+
+ul.help-categories li>a:hover {
+    text-decoration: none;
+}
+
+.category-button-inner {
+    display: flex;
+    flex-direction: column;
+}
+
+.category-button-inner>span:nth-child(1) {
+    font-size: 6em;
+    color: var(--theatre-green);
+}
+
+.category-button-inner>span:nth-child(1)>img {
+    display: inline-block;
+    max-height: 6em;
+    margin-bottom: 16px;
+}
+
+.category-button-inner>span:nth-child(2) {
+    font-size: 1.8em;
+    margin-top: -20px;
+    color: #000;
+}
+
+.category-button-inner>span:nth-child(3) {
+    color: #000;
+}
+
+.btn-support-link {
+    background-color: var(--theatre-green);
+    color: #fff;
+    margin: 3px;
+}
+
+.btn-support-link:hover {
+    background-color: #80B030;
+    color: #fff;
+}
+
+
+/* Category list items */
+
+ul.category-list-items li {
+    display: inline-block;
+    list-style: none;
+    border: 1px solid black;
+    min-height: 220px;
+    width: 250px;
+    background-color: #fff;
+    box-shadow: 1px 3px 1px 1px rgba(212, 212, 212, 1);
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    margin: 8px;
+    border-left-width: 0px;
+    border-top-width: 0px;
+    border-right-width: 0px;
+}
+
+ul.category-list-items li>a {
+    outline: 0;
+}
+
+ul.category-list-items li>a:hover {
+    text-decoration: none;
+}
+
+div.category-list-item-thumb {
+    width: 250px;
+    height: 150px;
+    background-size: cover !important;
+    border-radius: 10px 10px 0px 0px;
+}
+
+ul.category-list-items>li>a>div>img {
+    border-radius: 10px 10px 0px 0px;
+    max-height: 140px;
+    min-height: 140px;
+}
+
+.category-list-item-inner {
+    display: flex;
+    flex-direction: column;
+}
+
+.category-list-item-inner span {
+    vertical-align: middle;
+    top: 1vh;
+    position: relative;
+}
+
+body {
+    font-family: fot-seurat-pron, sans-serif;
+}
+
+
+/* Privacy policy dont use brand font */
+
+article#post_622 * {
+    font-family: sans-serif !important;
+}
+
+article#post_622 ul {
+    list-style: revert;
+    margin: revert;
+    padding: revert;
+}
+
+
+/* Help Center welcome banner */
+
+div#help-center-welcome-header {
+    background-color: var(--theatre-green);
+}
+
+#help-center-welcome-header-consoles {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.consoles-container img {
+    width: 100%;
+    height: auto;
+    /* disabled until we can figure out top-bar width issues */
+    /* margin-right: -60px; */
+}
+
+
+/*
+div#help-center-welcome-header div.header-and-search.row div div.page-header h1 a {
+    font-size: 53px;
+}
+
+div#help-center-welcome-header div.header-and-search.row div div.page-header p {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+*/
+
+img.help-center-welcome-logo {
+    max-width: 300px;
+}
+
+
+/* X-Small devices (portrait phones, less than 576px) */
+
+
+/* No media query for `xs` since this is the default in Bootstrap */
+
+
+/* Small devices (landscape phones, 576px and up) */
+
+@media (min-width: 576px) {}
+
+
+/* Medium devices (tablets, 768px and up) */
+
+@media (min-width: 768px) {}
+
+
+/* Large devices (desktops, 992px and up) */
+
+@media (min-width: 992px) {}
+
+
+/* X-Large devices (large desktops, 1200px and up) */
+
+@media (min-width: 1200px) {}
+
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+
+@media (min-width: 1400px) {
+    div#help-center-welcome-header div.header-and-search.row div div.page-header h1 a {
+        font-size: 53px;
+    }
+    div#help-center-welcome-header div.header-and-search.row div div.page-header p {
+        font-weight: bold;
+        font-size: 24px;
+    }
+}

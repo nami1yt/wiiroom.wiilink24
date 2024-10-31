@@ -1,0 +1,175 @@
+@charset "UTF-8";
+:root {
+    --theatre-primary: var(--theatre-primary-default);
+}
+
+.theme-body {
+    font-family: 'Helvetica Neue', Helvetica, sans-serif;
+    background-image: url(/theatre_assets/theme/sudomemo_new_stars/body_new_stars.gif);
+    background-attachment: fixed;
+}
+
+.theme-panel-title {
+    color: #ffffff;
+    background-color: var(--theatre-primary);
+}
+
+.theme-panel-body {
+    background-color: #f9f9f9 !important;
+}
+
+.theme-link {
+    color: #62882D;
+}
+
+.theme-link:hover {
+    color: #62882D;
+    text-decoration: underline;
+}
+
+.theme-link-inverted {
+    color: #ffffff;
+}
+
+.theme-link-inverted:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.theme-navbar-background {
+    z-index: 11111;
+    /* because hatenastar's menu uses a z-index of over 10000 */
+    background-color: var(--theatre-primary);
+    border-color: #ffffff;
+    border-bottom-width: 2px;
+}
+
+.theme-navbar-text li a {
+    color: #fff;
+}
+
+.theme-navbar-text li a:hover {
+    color: var(--theatre-primary);
+    background-color: #fff;
+}
+
+.theme-navbar-text .open a,
+.theme-navbar-text .open a:hover,
+.theme-navbar-text .open a:focus {
+    color: var(--theatre-primary);
+    background-color: #f5f5f5;
+}
+
+.theme-navbar-text .dropdown-menu a,
+.theme-navbar-text .dropdown-menu {
+    color: var(--theatre-primary);
+    background-color: #fff;
+}
+
+.dropdown.open {
+    background-color: #fff;
+}
+
+.dropdown-header {
+    font-size: 1em;
+    font-weight: bold;
+    color: #6d6d6d;
+    background-color: #efefef;
+}
+
+.dropdown-toggle:focus {
+    color: var(--theatre-primary);
+    background-color: #efefef;
+}
+
+.btn-custom-active {
+    background-color: var(--theatre-primary);
+    color: #fff;
+    border: solid 1px var(--theatre-primary);
+}
+
+.btn-custom-active>a {
+    color: #fff;
+}
+
+.btn-custom {
+    background-color: #fff;
+    color: var(--theatre-primary);
+    border: solid 1px var(--theatre-primary);
+}
+
+.navbar-custom .navbar-toggler {
+    border-width: 2px;
+    color: #fff;
+}
+
+.navbar-custom .navbar-toggler:hover,
+.navbar-custom .navbar-toggler:focus,
+.navbar-custom .navbar-toggler:active {
+    background-color: #62882D;
+}
+
+
+/* Welcome to Sudomemo logo colors */
+
+a.topic-banner {
+    background-image: var(--bg-light-stars);
+}
+
+.sudomemo-logo-svg-outline {
+    fill: #000000;
+    /* fill: var(--theatre-primary); */
+}
+
+.sudomemo-logo-svg-play-button {
+    stroke: #000;
+    /*stroke: var(--theatre-primary); */
+}
+
+
+/* Profile */
+
+div.profile-head {
+    border: 1px solid #E0E0E0;
+}
+
+div.panel-common {
+    border: 1px solid var(--theatre-primary);
+}
+
+.profile-head #profile-wrapper {
+    background: var(--theatre-primary) var(--bg-frog-star-green-trans);
+    color: white;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+span.profile-username {
+		/* this makes it more visible against the busy background */
+    background: #86bc3b40;
+}
+.profile-user-details>div>span.small-caps {
+		/* same as above */
+		background: #86bc3b6b;
+}
+
+div.follow-button>div.btn-group>button.btn-custom {
+    background-color: #fff;
+    color: var(--theatre-primary);
+    border: solid 1px #fff;
+}
+
+div.follow-button>div.btn-group>button.btn-custom-active {
+    background-color: var(--theatre-primary);
+    color: #fff;
+    border: solid 1px #fff;
+}
+  
+#ticketModal .modal-header {
+  background: var(--theatre-primary) var(--bg-frog-star-green-trans);
+  color: #ffffff !important;
+}
+  
+#ticketModal .modal-header > * {
+  color: #fff;
+  background-color: #86bc3b40 !important;
+}
