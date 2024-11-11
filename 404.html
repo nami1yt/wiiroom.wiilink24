@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="sharedcode/common.css">
+
+
+</head>
+
+<body>
+
+    <div class="nav">
+
+        <a href=index.html><img class=navlogo style="padding-top:10px;width:150px;height:auto;" src=graphics/logos/Wii_Link_Logo.png></a>
+        
+    <div class=ctrlposition style="display:inline-block;">	
+        <a href=""><img class=browserctrlfresh onclick="refreshPage()" src=graphics/buttons/refresh.png></a>
+        <img class=browserctrldiv src=graphics/buttons/divider.jpg>			
+        <a href=""><img class=browserctrl onclick="goForward()" src=graphics/buttons/forward.png></a>
+        <a href=""><img class=browserctrl onclick="goBack()" src=graphics/buttons/back.png></a>
+    </div>
+
+</div>
+
+<div style="padding-top:70px;">
+	
+    <p style="text-align:center;padding:5px;font-size:70px;"><b>404</b></p>
+    <p style="text-align:center;padding:0px;font-size:40px;">Check back Later!</p>
+</div>
+
+</body>
+
+<script>
+		
+    function refreshPage() {
+        location.reload();
+    }
+
+    function goBack() {
+        history.back();
+    }
+
+    function goForward() {
+        history.forward();
+    }
+    
+</script>
+
+</html>
