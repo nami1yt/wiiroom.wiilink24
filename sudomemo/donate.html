@@ -1,39 +1,114 @@
 <!DOCTYPE html>
 <html>
-<head>
-<style>
+	<head>
 
-body {
-  background-image: url("assets/tile1.png");
-}
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="../sharedcode/common.css">
+		
+		<style>
+		
+			body {
+			background-image: url("assets/tile1.png");
+			background-color: #f3f7f9;
+			color:black;
+			}
+			
+			.nav {
+			height: 70px;
+			width: 86%;
+			background-color: #86bc3b;
+			padding: 0px 60px 0px 60px;
+			}
+			
+			.browserctrl, .browserctrlfresh {
+			padding-top: 5px;
+			}
+			
+			.browserctrl:active, .browserctrlfresh:active {
+			padding-top:13px;
+			}
+			
+			.browserctrldiv {
+			padding-top: 8px;
+			}
+			
+			.maintextbox {
+			background-color:white;
+			width: 650px;
+			padding:15px;
+			margin-left:auto;
+			margin-right:auto;
+			border: 2px solid #86bc3b;
+			}
+			
+			.maintextboxtop {
+			background-color:#86bc3b;
+			color:white;
+			width: 650px;
+			padding:15px;
+			margin-left:auto;
+			margin-right:auto;
+			border: 2px solid #86bc3b;
+			}
+			
+			@media screen and (max-width: 609px) {
+		
+			.nav {
+			width:88%;
+			padding: 0px 40px 0px 40px;
+			}
+			
+			.maintextbox {
+			width: 480px;
+			}
+			
+			.maintextboxtop {
+			width: 480px;
+			}
+			
+			}
+		
+		</style>
 
-h1 {
-  font-size: 25px;
-}
+	</head>
+	
+	<body>
+	
+	    <div class="nav">
 
-h2 {
-  font-size: 20px;
-}
+			<a href=index.html><img class=navlogo style="padding-top:14px;width:200px;height:auto;" src="assets/sudomemonav.png"></a>
+			
+			<div class=ctrlposition style="display:inline-block;">	
+				<a href=""><img class=browserctrlfresh onclick="refreshPage()" src=http://wiiroom.wiilink24.com/graphics/buttons/refresh.png></a>
+				<img class=browserctrldiv src=http://wiiroom.wiilink24.com/graphics/buttons/divider.jpg>			
+				<a href=""><img class=browserctrl onclick="goForward()" src=http://wiiroom.wiilink24.com/graphics/buttons/forward.png></a>
+				<a href=""><img class=browserctrl onclick="goBack()" src=http://wiiroom.wiilink24.com/graphics/buttons/back.png></a>
+			</div>
 
-h3 {
-  font-size: 20px;
-}
+		</div>
+		
+		
+		<div style="padding-top:90px;">
+		
+		
+		<div class="maintextboxtop">
+			
+			<p style="margin:0;">title title title title title title title title</p>
+				
+		</div>
+		
+			<div class="maintextbox">
+			
+				<p>GO FUCK YOURSELF</p>
+				
+			</div>
+		
+		
+		</div>
 
-h4 {
-  font-size: 45px;
-}
 
 
-</style>
-</head>
-<body>
-
-<center> <img src="assets/sudomemohelp.png"><br>
-<img src="assets/line.png"><br>
-<img src="assets/sudomemoplus.png" width="500">
-<h1> A way to support Sudomemo while supercharging your experience.</h1><br>
-<img src="assets/plus.png">
-<h2>Sudomemo Plus (or “Plus” for short) is a service that allows you to support us while getting some sweet perks in return. Plus is not a monthly subscription, rather, it is prepaid on a per-day basis.</h2><br>
-
-</body>
+	</body>
+	
+	<script src="sharedcode/global.js"></script>
 </html>
