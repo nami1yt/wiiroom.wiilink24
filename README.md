@@ -1,8 +1,8 @@
   <h2 align="center"><b><i>The WiiLink website made for Wii Room!</i></b></h2>
 </p>
 
-This website is a much more downgraded version of the original WiiLink website made for Wii Room users.
-It still provides similar functionality to the standard PC Browser site, such as:
+This is a much more specialized version of the WiiLink website made specifically for Wii Room users.
+It still provides similar functionality to the standard modern browser site, such as:
 
 - News announcements
 - Service information
