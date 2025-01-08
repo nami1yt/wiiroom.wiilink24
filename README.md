@@ -9,14 +9,8 @@ It still provides similar functionality to the standard modern browser site, suc
 
 </br>
 
-Some things are also planned for the future of this site, such as:
-
-- Internet Channel functionality
-
-</br>
-
 ## Here's everyone who contributed!
-<a href = "https://github.com/WiiLink24/web/graphs/contributors">
+<a href = "https://github.com/WiiLink24/wiiroom.wiilink24/graphs/contributors">
   <img src = "https://contrib.rocks/image?repo=KingMayro/wiiroom.wiilink24"/>
 </a>
 
