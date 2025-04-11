@@ -6,6 +6,7 @@ It still provides similar functionality to the standard modern browser site, suc
 
 - News announcements
 - Service information
+- Wii Room Program List
 
 </br>
 
