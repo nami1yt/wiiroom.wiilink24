@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="sharedcode/common.css">
+		
+	<style>
+	
+	.services {
+	display:inline;
+	padding-right:3px;
+	}
+	
+	.textbox {
+	background-color:#161515;
+	padding:20px;
+	width:600px;
+	vertical-align:top;
+	}	
+	
+	.sitename {
+	font-size:40px;
+	vertical-align:top;
+	margin:0;
+	display:inline;
+	}
+	
+	.siteimg {
+	vertical-align:middle;
+	width:auto;
+	height:40px;
+	display:inline;
+	padding-right:10px;
+	}
+	
+	.gotobutton {
+	width:94%;
+	font-size:25px;
+	text-align:center;
+	background-color:#24a1ca;
+	padding:15px;
+	}
+	
+	.gotobutton:hover {
+	opacity:0.8;
+	}
+	
+	.gotobutton:active {
+	opacity:0.5;
+	}
+	
+	.paddingforgoto {
+	padding-left:50px;
+	padding-right:50px;
+	}
+	
+	.status {
+	vertical-align:middle;
+	width:30px;
+	height:auto;
+	}
+	
+	
+	@media screen and (max-width: 609px) {
+		.textbox {
+		background-color:#161515;
+		padding:20px;
+		width:374px;
+		}
+		
+		.sitename {
+		float:none;
+		}
+		
+		.paddingforgoto {
+		padding-left:40px;
+		padding-right:50px;
+		}
+		
+	}
+	
+	
+	
+	
+	</style>
+
+
+</head>
+
+
+<body>
+
+    <div class="nav">
+
+			<a href=index.html><img class=navlogo style="padding-top:10px;width:150px;height:auto;" src=graphics/logos/Wii_Link_Logo.png></a>
+			
+		<div class=ctrlposition style="display:inline-block;">	
+			<a href=""><img class=browserctrlfresh onclick="refreshPage()" src=graphics/buttons/refresh.png></a>
+			<img class=browserctrldiv src=graphics/buttons/divider.jpg>			
+			<a href=""><img class=browserctrl onclick="goForward()" src=graphics/buttons/forward.png></a>
+			<a href=""><img class=browserctrl onclick="goBack()" src=graphics/buttons/back.png></a>
+		</div>
+
+    </div>
+	
+
+
+
+
+
+		<div class=sidebar style="position: fixed;">
+			<div class=sidebuttons style="position: fixed;padding-top:120px;text-align:center;">
+			
+				<a class=navbutton href=index.html><img style="width:27px;height:auto;vertical-align: middle;padding:0px 5px 5px 0px;" src=graphics/buttons/home.png><b>Home</b></a>
+					<div style="padding-top:3px;"></div>
+				<a class=navbutton href=services.html><img style="width:27px;height:auto;vertical-align: middle;padding:0px 5px 5px 0px;" src=graphics/buttons/services.png><b>Services</b></a>					
+					<div style="padding-top:3px;"></div>
+				<a class=navbutton href=credits.html><img style="width:27px;height:auto;vertical-align: middle;padding:0px 5px 5px 0px;" src=graphics/buttons/web.png><b>Credits</b></a>
+					<div style="padding-top:3px;"></div>
+				<a class=navbutton href=extras.html><img style="width:27px;height:auto;vertical-align: middle;padding:0px 5px 5px 0px;" src=graphics/buttons/guide.png><b>Extras</b></a>					
+	
+			</div>
+
+		</div>
+	
+	
+
+	<div style="padding-top:70px;">
+	
+		<p style="text-align:center;padding:10px;padding-left:145px;background-color:#24a1ca;font-size:18px;"><b>WiiConnect24 Services</b><br>Services originally powered by WiiConnect24, now revived by us!</p>
+	</div>
+	
+
+	<div style="padding-left:160px;">
+
+
+	<div class=services style="padding-top:20px;display:inline-block;">
+		<div class=textbox style="padding-top:20px;">		
+			<img class=siteimg src=graphics/status/miicontest_icon.png><p class=sitename><b>Check Mii Out Channel</b></p>
+			<p class=innertextbox style="margin:0;">Share Miis with the community and enter them in contests.</p>
+	
+			<div style="padding-top:10px;"></div>
+			<p class=innertextbox style="margin:0;"><img class=status src=graphics/buttons/good.png>This service is working properly!</p>			
+		</div>
+	</div>
+	
+	<div class=services style="padding-top:20px;display:inline-block;">
+		<div class=textbox style="padding-top:20px;">		
+			<img class=siteimg src=graphics/status/democracy_icon.png><p class=sitename><b>Everybody Votes Channel</b></p>
+			<p class=innertextbox style="margin:0;">Answer questions and tell the world your answer in national and worldwide polls!</p>	
+
+			<div style="padding-top:10px;"></div>
+			<p class=innertextbox style="margin:0;"><img class=status src=graphics/buttons/good.png>This service is working properly!</p>					
+		</div>
+	</div>
+	
+	<div class=services style="padding-top:20px;display:inline-block;">
+		<div class=textbox style="padding-top:20px;">		
+			<img class=siteimg src=graphics/status/forecast_icon.png><p class=sitename><b>Forecast Channel</b></p>
+			<p class=innertextbox style="margin:0;">Check the weather from anywhere right from your Wii!</p>	
+
+			<div style="padding-top:10px;"></div>
+			<p class=innertextbox style="margin:0;"><img class=status src=graphics/buttons/good.png>This service is working properly!</p>					
+		</div>
+	</div>
+	
+	<div class=services style="padding-top:20px;display:inline-block;">
+		<div class=textbox style="padding-top:20px;">		
+			<img class=siteimg src=graphics/status/news_icon.png><p class=sitename><b>News Channel</b></p>
+			<p class=innertextbox style="margin:0;">Read the global news on your Wii!</p>	
+
+			<div style="padding-top:10px;"></div>
+			<p class=innertextbox style="margin:0;"><img class=status src=graphics/buttons/good.png>This service is working properly!</p>					
+		</div>
+	</div>
+	
+	<div class=services style="padding-top:20px;display:inline-block;">
+		<div class=textbox style="padding-top:20px;">		
+			<img class=siteimg src=graphics/status/nintendo_icon.png><p class=sitename><b>Nintendo Channel</b></p>
+			<p class=innertextbox style="margin:0;">Watch videos, get information about games, recommend titles, download DS software, and more.</p>	
+
+			<div style="padding-top:10px;"></div>
+			<p class=innertextbox style="margin:0;"><img class=status src=graphics/buttons/good.png>This service is working properly!</p>					
+		</div>
+	</div>		
+	
+	<div class=services style="padding-top:20px;display:inline-block;">
+		<div class=textbox style="padding-top:20px;">		
+			<img class=siteimg src=graphics/buttons/email.png><p class=sitename><b>Wii Message Board</b></p>
+			<p class=innertextbox style="margin:0;">Communicate with other Wiis again!</p>	
+
+			<div style="padding-top:10px;"></div>
+			<p class=innertextbox style="margin:0;"><img class=status src=graphics/buttons/good.png>This service is working properly!</p>					
+			<div class=paddingforgoto>			
+			<!-- <a href="http://wiiroom.wiilink24.com/extras.html"><p class=gotobutton>Click here for more information!</p></a> -->
+			</div>				
+		</div>
+	</div>	
+	
+	<div class=services style="padding-top:20px;display:inline-block;">
+		<div class=textbox style="padding-top:20px;">		
+			<img class=siteimg src=graphics/buttons/mic.png><p class=sitename><b>Wii Speak Channel</b></p>
+			<p class=innertextbox style="margin:0;">Voice chat with people on your Wii!</p>	
+
+			<div style="padding-top:10px;"></div>
+			<p class=innertextbox style="margin:0;"><img class=status src=graphics/buttons/good.png>This service is working properly!</p>					
+		</div>
+	</div>		
+	
+	</div>
+	
+	
+	<div style="padding-top:50px;">
+		<p class=innertextbox style="text-align:center;padding:10px;padding-left:145px;background-color:#d05d5d;font-size:18px;"><b>Regional Exclusive Services</b><br>Japanese and European
+services, now localized and enhanced for the whole wide world!</p>	
+
+	</div>
+
+
+	<div style="padding-left:160px;">
+
+
+	<div class=services style="padding-top:20px;display:inline-block;">
+		<div class=textbox style="padding-top:20px;">		
+			<img class=siteimg src=graphics/status/demae_icon.png><p class=sitename><b>Food Channel</b></p>
+			<p class=innertextbox style="margin:0;">The Food Channel, for all your culinary needs!</p>
+
+			<div style="padding-top:10px;"></div>
+			<p class=innertextbox style="margin:0;"><img class=status src=graphics/buttons/good.png>This service is working properly!</p>				
+		</div>
+	</div>
+
+	<div class=services style="padding-top:20px;display:inline-block;">
+		<div class=textbox style="padding-top:20px;">		
+			<img class=siteimg src=graphics/status/film_icon.png><p class=sitename><b>Metroid Prime 3 Preview</b></p>
+			<p class=innertextbox style="margin:0;">Watch some preview stuff about Metroid Prime 3!</p>
+
+			<div style="padding-top:10px;"></div>
+			<p class=innertextbox style="margin:0;"><img class=status src=graphics/buttons/error.png>This service's development has been halted.</p>			
+		</div>
+	</div>
+	
+	<div class=services style="padding-top:20px;display:inline-block;">
+		<div class=textbox style="padding-top:20px;">		
+			<img class=siteimg src=graphics/status/digicam_icon.png><p class=sitename><b>Photo Prints Channel</b></p>
+			<p class=innertextbox style="margin:0;">Create albums and business cards with your photos and Mii characters.</p>	
+
+			<div style="padding-top:10px;"></div>
+			<p class=innertextbox style="margin:0;"><img class=status src=graphics/buttons/good.png>This service is working properly!</p>					
+		</div>
+	</div>
+	
+	<div class=services style="padding-top:20px;display:inline-block;">
+		<div class=textbox style="padding-top:20px;">		
+			<img class=siteimg src=graphics/status/tvguide_icon.png><p class=sitename><b>TV Guide Channel</b></p>
+			<p class=innertextbox style="margin:0;">Get live EPG guides right on your Wii!</p>	
+
+			<div style="padding-top:10px;"></div>
+			<p class=innertextbox style="margin:0;"><img class=status src=graphics/buttons/working.png>This service is still under development and beta testing!</p>					
+		</div>
+	</div>
+	
+	<div class=services style="padding-top:20px;display:inline-block;">
+		<div class=textbox style="padding-top:20px;">		
+			<img class=siteimg src=graphics/status/room_icon.png><p class=sitename><b>Wii Room</b></p>
+			<p class=innertextbox style="margin:0;">Stream all sorts of content from videos to promotional images right onto your Wii!</p>	
+
+			<div style="padding-top:10px;"></div>
+			<p class=innertextbox style="margin:0;"><img class=status src=graphics/buttons/good.png>This service is working properly!</p>					
+		</div>
+	</div>
+
+	<div class=services style="padding-top:20px;display:inline-block;">
+		<div class=textbox style="padding-top:20px;">		
+			<img class=siteimg src=graphics/status/room_icon.png><p class=sitename><b>Wii Room Anywhere</b></p>
+			<p class=innertextbox style="margin:0;">Bring videos and coupons from Wii Room on the go with your Nintendo DSi!</p>
+
+			<div style="padding-top:10px;"></div>
+			<p class=innertextbox style="margin:0;"><img class=status src=graphics/buttons/working.png>This service is still under development and beta testing!</p>			
+
+			<div class=paddingforgoto>			
+			<!-- <a href="http://wiiroom.wiilink24.com/extras.html"><p class=gotobutton>Click here for more information!</p></a> -->
+			</div>				
+		</div>
+	</div>
+
+	<div class=services style="padding-top:20px;display:inline-block;">
+		<div class=textbox style="padding-top:20px;">		
+			<img class=siteimg src=graphics/status/youtube_icon.png><p class=sitename><b>Youtube (Wii)</b></p>
+			<p class=innertextbox style="margin:0;">Watch content from Youtube on your Wii again!</p>
+
+			<div style="padding-top:10px;"></div>
+			<p class=innertextbox style="margin:0;"><img class=status src=graphics/buttons/error.png>This service's development has been halted.</p>			
+		</div>
+	</div>
+
+	</div>
+	
+	
+	<div style="padding-top:50px;">
+		<p style="text-align:center;padding:10px;padding-left:145px;background-color:#3C693A;font-size:18px;"><b>Miscellaneous Services</b><br>Fun extra services you can enjoy with WiiLink!</p>	
+
+
+	
+	
+		<div style="padding-left:160px;">
+
+
+	<div class=services style="padding-top:20px;display:inline-block;">
+		<div class=textbox style="padding-top:20px;">		
+			<img class=siteimg src=graphics/status/leaf_icon.png><p class=sitename><b>Animal Crossing (Wii) DLC</b></p>
+			<p class=innertextbox style="margin:0;">Get special items as DLC delivered to you in Animal Crossing: City Folk on the Wii!</p>
+
+			<div style="padding-top:10px;"></div>
+			<p class=innertextbox style="margin:0;"><img class=status src=graphics/buttons/good.png>This service is working properly!</p>			
+		</div>
+	</div>
+
+	<div class=services style="padding-top:20px;display:inline-block;">
+		<div class=textbox style="padding-top:20px;">		
+			<img class=siteimg src=graphics/status/truck_icon.png><p class=sitename><b>DoujinSoft</b></p>
+			<p class=innertextbox style="margin:0;">Send content made in WarioWare DIY directly to your Wii!</p>
+
+			<div style="padding-top:10px;"></div>
+			<p class=innertextbox style="margin:0;"><img class=status src=graphics/buttons/good.png>This service is working properly!</p>			
+		</div>
+	</div>
+
+	<div class=services style="padding-top:19px;display:inline-block;">
+		<div class=textbox style="padding-top:20px;">		
+			<img class=siteimg src=graphics/status/gamenight_icon.png><p class=sitename><b>Game Nights</b></p>
+			<p class=innertextbox style="margin:0;">Play a Wii or DS game on Wiimmfi/WiiLink WFC with the community every week!</p>
+
+			<div style="padding-top:10px;"></div>
+			<p class=innertextbox style="margin:0;"><img class=status src=graphics/buttons/good.png>These events are still currently ongoing!</p>			
+			<div class=paddingforgoto>			
+			<!-- <a href="http://wiiroom.wiilink24.com/extras.html"><p class=gotobutton>Click here for more information!</p></a> -->
+			</div>				
+		</div>
+	</div>
+
+	<div class=services style="padding-top:19px;display:inline-block;">
+		<div class=textbox style="padding-top:20px;">		
+			<img class=siteimg src=graphics/status/tag_icon.png><p class=sitename><b>LinkTag</b></p>
+			<p class=innertextbox style="margin:0;">Enjoy a GamerTag on the Wii with LinkTag!</p>
+
+			<div style="padding-top:10px;"></div>
+			<p class=innertextbox style="margin:0;"><img class=status src=graphics/buttons/working.png>This service is still under development!</p>	
+		</div>
+	</div>
+
+	<div class=services style="padding-top:19px;display:inline-block;">
+		<div class=textbox style="padding-top:20px;">		
+			<img class=siteimg src=graphics/status/rss_icon.png><p class=sitename><b>RSSMii</b></p>
+			<p class=innertextbox style="margin:0;">Get RSS updates on your Wii!</p>
+
+			<div style="padding-top:10px;"></div>
+			<p class=innertextbox style="margin:0;"><img class=status src=graphics/buttons/good.png>This service is working properly!</p>
+			
+			<div class=paddingforgoto>			
+			<!-- <a href="http://wiiroom.wiilink24.com/extras.html"><p class=gotobutton>Click here for more information!</p></a> -->
+			</div>				
+		</div>
+	</div>
+
+	<div class=services style="padding-top:19px;display:inline-block;">
+		<div class=textbox style="padding-top:20px;">		
+			<img class=siteimg src=graphics/status/wfc_icon.png><p class=sitename><b>WiiLink Wi-Fi Connection</b></p>
+			<p class=innertextbox style="margin:0;">Play with people in online games on the Wii again with WiiLink WFC!</p>
+
+			<div style="padding-top:10px;"></div>
+			<p class=innertextbox style="margin:0;"><img class=status src=graphics/buttons/good.png>This service is working properly!</p>
+
+			<div class=paddingforgoto>			
+			<!-- <a href="http://wiiroom.wiilink24.com/extras.html"><p class=gotobutton>Click here for more information!</p></a> -->
+			</div>				
+		</div>
+	</div>
+
+
+	</div>
+
+	
+	<div class=footer>
+			<img id=footerImage style="padding-top:70px;padding-left:126px;width:100%;display:block;" src="">
+			<img class=footertextsidebar style="width:120px;padding-top:80px;height:auto;" src=graphics/logos/logo.png><p style="padding-top:175px;font-size:19px;" class=footertextsidebar><img style="width:27px;height:auto;vertical-align:middle;display:inline;padding:0px 5px 5px 0px;" src=graphics/buttons/web.png>Site by <a href=mayro.html><img style="width:27px;height:auto;vertical-align:middle;display:inline;padding-bottom:5px;" src=graphics/logos/Mayro.png>KingMayro</a></p><p style="font-size:19px;padding-top:210px;" class=footertextsidebar><img style="width:27px;height:auto;vertical-align:middle;display:inline;padding:0px 5px 5px 0px;" src=graphics/buttons/email.png>contact@wiilink24.com</p>
+			<p style="padding:75px 60px 0px 0px;font-size:40px;border-bottom: 2px solid;" class=footertextrightsidebar>Socials</p><p style="padding-top:135px;font-size:19px;" class=footertextrightsidebar><img style="width:32px;height:auto;vertical-align:middle;display:inline;padding:0px 5px 5px 0px;" src=graphics/logos/discord.png>discord.gg/wiilink<br><img style="width:32px;height:auto;vertical-align:middle;display:inline;padding:0px 5px 5px 0px;" src=graphics/logos/twitter.png>@WiiLink24<br><img style="width:32px;height:auto;vertical-align:middle;display:inline;padding:0px 5px 5px 0px;" src=graphics/logos/github.png>WiiLink24<br><img style="width:32px;height:auto;vertical-align:middle;display:inline;padding:0px 5px 5px 0px;" src=graphics/logos/youtube.png>@wiilink</p>
+			<div class=footertextcentersidebar style="display:inline-block;vertical-align:top;"><a href=tos.html><p class=footerlegaltexttos style="display:inline-block;"><img style="width:17px;height:auto;vertical-align:middle;display:inline;padding:0px 5px 2px 0px;" src=graphics/buttons/arrow.png>Terms of Service</p></a> <a href=privacy.html><p class=footerlegaltextprivacy style="display:inline-block;"><img style="width:17px;height:auto;vertical-align:middle;display:inline;padding:0px 5px 2px 0px;" src=graphics/buttons/arrow.png>Privacy Policy</p></a> <a href=eula.html><p class=footerlegaltexteula style="display:inline-block;"><img style="width:17px;height:auto;vertical-align:middle;display:inline;padding:0px 5px 2px 0px;" src=graphics/buttons/arrow.png>EULA</p></a></div>
+	</div>
+	
+
+	
+	
+</body>
+
+<script src="sharedcode/global.js"></script>
+
+    <script>
+		
+
+        function refreshPage() {
+            location.reload();
+        }
+
+        function goBack() {
+            history.back();
+        }
+
+        function goForward() {
+            history.forward();
+        }
+		
+    </script>
+
+
+</html>
