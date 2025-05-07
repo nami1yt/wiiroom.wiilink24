@@ -1,13 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Satellaview+ Schedule</title>
+<html><head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="tab icon" href="favicon.png">
+<link rel="icon" href="favicon.ico">
+<title>Satellaview+ - Programming Schedule Archive</title>
     <style>
         @font-face {
             font-family: 'UnicodeMonoEx';
-            src: url('UnicodeMonoEx.ttf') format('truetype');
+            src: url('./august/UnicodeMonoEx.ttf') format('truetype');
         }
         body {
             font-family: 'UnicodeMonoEx', monospace;
@@ -40,10 +39,56 @@
         .bold-title {
             font-weight: bold;
         }
+		
+		.table {
+		width:480px;
+		}
+		
+		.tabtable {
+		width:550px;
+		}
+
+		@media screen and (max-width: 580px) {
+
+		.table {
+		width:100%
+		}
+		
+		.tabtable {
+		width:98%;
+		}
+
+		}
     </style>
-</head>
-<body>
-    <h1>Satellaview+ Schedule</h1>
+<basefont size="3">
+<center><h1>Archived Schedules</h1></center>
+<hr size="3" width="100%">
+
+<br>
+
+<center>
+<table border="0" class="table">
+<tbody><tr>
+<td align="center">
+
+<center>
+<table border="0">
+<tbody><tr>
+<td align="center">
+<img src="schedule_files/prg_logo.gif" "=" alt="***" style="width:100%" border="0"><br>
+
+</td>
+</tr>
+</tbody></table>
+</center>
+
+<br>
+<center>
+<table border="0">
+<tbody><tr>
+<td align="left">
+<font size="5" color="#000000">
+<img src="./schedule_files/prg_s.gif" border="0">　Satellaview+ Schedule<br><p>Please note that times are in Eastern US time. (GMT-5)</p>
     <select id="dateDropdown">
         <option value="">Select a date</option>
     </select>
@@ -55,7 +100,7 @@
 
         // Function to fetch and parse the CSV file
         function fetchCSV() {
-            fetch('ScheduleData.csv')
+            fetch('./august/ScheduleArchive.csv')
                 .then(response => response.text())
                 .then(csvText => {
                     Papa.parse(csvText, {
@@ -119,5 +164,33 @@
         // Call the function to fetch and parse the CSV file
         fetchCSV();
     </script>
-</body>
-</html>
+<br>
+<br>
+<font size="5" color="#000000">
+<img src="schedule_files/prg_s.gif" border="0">　<a href="https://satellaviewplus.github.io/schedule.htm">現行予定/Current Schedule</a><br>
+<img src="schedule_files/prg_s.gif" border="0">　<a href="https://satellaviewplus.github.io">戻る/Back</a><br>
+
+</font>
+</td>
+</tr>
+</tbody></table>
+</center>
+
+
+
+
+</td>
+</tr>
+</tbody></table>
+</center>
+
+<br>
+<br>
+
+<hr size="3" width="100%">
+
+
+
+
+
+</body></html>
