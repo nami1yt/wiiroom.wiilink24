@@ -1,0 +1,137 @@
+---
+import Layout from "../layout/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Sidebar from "../components/Sidebar.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout />
+<Navbar />
+<Sidebar />
+
+<div style="padding-top:90px;padding-left:150px;padding-right:10px;">
+  <p style="font-size:65px;display:inline-block;margin:0;">
+    <b>The Privacy</b>
+  </p>
+  <div class="lastupdated" style="vertical-align:top;">
+    <p style="background-color:#161515;padding:6px;">
+      Last Updated: 03/12/2022
+    </p>
+  </div>
+  <p style="color:gray;font-size:27px;margin:0;padding-bottom:30px;">
+    Privacy policy for the WiiLink family of services
+  </p>
+
+  <p style="font-size:45px;margin:0;padding-top:50px;">Privacy Policy</p>
+  <p>
+    The protection and confidentiality of personal data something WiiLink takes
+    extremely seriously. We believe in protecting the information accessed in
+    the most secure way possible. We also believe that being transparent on how
+    we access your data leads to a bigger sense of trust with the consumer.
+    <br /><br />Please take your time and read through this Privacy Policy to
+    the best of your ability to learn how we access and store your data. You
+    will be notified through our Discord server if this document changes.
+    <br /><br />This Privacy Policy only applies to the Demae Domino's service
+    of WiiLink. For information on our other services, please read this. By
+    using the Demae Domino's service, you consent to our practices stated in
+    this document. If you do not consent, please exit this page and do not use
+    our services. Since this service utilizes the Domino's Pizza API, you are
+    also required to agree to their Terms of Use and Privacy Policy. In the
+    United States that is here and in Canada it is here.
+    <br /><br />If you do not live in the regions of the United States of
+    America or Canada, you are not authorized to use this service. Please exit
+    this website and do not return.
+    <br /><br />If you have any questions or concerns about this Privacy Policy,
+    do not hesitate to reach out to staff in our Discord server.
+  </p>
+
+  <p style="font-size:45px;margin:0;padding-top:50px;">What do we access?</p>
+  <p>
+    In order to use the Demae Domino's service, you must insert your correct
+    personal information into the Set Personal Data channel on your Wii. This
+    data is encrypted with AES-256-CBC, and is only ever on your Wii. Aside from
+    this, there are other methods of data collection. Just by accessing this
+    website, your IP address is being logged by our web server, nginx. When you
+    purchase access to the Demae Domino's service, you enter payment information
+    which is sent directly to Stripe, Inc. We access this data only in the
+    following scenarios:
+    <br /><br />• Requesting nearby restaurants from Domino's Pizza<br />•
+    Requesting the price of a basket from Domino's Pizza<br />• Placing an order
+    to Domino's Pizza<br />• Purchasing access to the service on this website
+    <br /><br /><br />Personal Data that is accessed
+    <br /><br />• Home Address<br />• Apartment Number (If applicable)<br />•
+    Postal/Zip Code<br />• City<br />• Phone Number<br />• Email Address<br />•
+    First Name<br />• Last Name<br />• IP Address<br />• Discord User ID<br />•
+    Wii Console ID<br />• Payment Information<br />
+    <br /><br />WiiLink never stores any of this data except your IP Address,
+    Discord User ID and Wii Console ID. Your IP Address is used to identify if
+    you are from either the United States of America or Canada. It is also
+    stored in our server logs. Your Discord User ID is used to link your Wii
+    console to a user WiiLink can easily contact. Your Wii Console ID is stored
+    to validate you purchased access to this channel. All other data is not
+    stored by WiiLink, however it is sent to Domino's Pizza in your region.
+    Please refer to the Privacy Policy in your region to see how they handle
+    your data.
+  </p>
+
+  <p style="font-size:45px;margin:0;padding-top:50px;">
+    Data Security and Transactions
+  </p>
+</div>
+
+<p
+  style="text-align:center;padding:10px;padding-left:145px;background-color:#cfe2ff;color:#161515;font-size:18px;"
+>
+  <b>Important!</b><br />Only the website handles transactions. The service on
+  the Wii does not.
+</p>
+
+<div style="padding-left:150px;padding-right:10px;">
+  <p>
+    This website is secured by the latest version of the TLS protocol, TLSv1.3.
+    Any transactions on this website is also secured by TLSv1.3 while being sent
+    to Stripe, Inc. Your payment information is never stored by WiiLink.
+    <br /><br />On the other-hand, the Wii only supports TLSv1.0, which is an
+    outdated and insecure protocol. This is what the server on the Wii uses. As
+    such the request is susceptible to MITM (Man-in-the-middle) attacks on your
+    local network, which is when an attacker on your local network intercepts
+    the request made by you to the server. However, this is much more secure
+    than the alternative, no security.
+  </p>
+
+  <p style="font-size:45px;margin:0;padding-top:50px;">Children's Privacy</p>
+</div>
+
+<p
+  style="text-align:center;padding:10px;padding-left:145px;background-color:#f8d7da;color:#161515;font-size:18px;"
+>
+  <b>Important!</b><br />This service is not intended for children under the age
+  of 13.
+</p>
+
+<div style="padding-left:150px;padding-right:10px;">
+  <p>
+    This service is not intended for children under the age of 13. If you are
+    under the age of 13, please exit this website and do not access this
+    service. WiiLink does not knowingly collect data from children under the age
+    of 13. Furthermore, if you are under the age of 13 and you are logged on to
+    your Discord account, you are also breaking Discord Inc.'s Terms of Service
+    found at https://discord.com/terms.
+  </p>
+
+  <p style="font-size:45px;margin:0;padding-top:50px;">
+    Changes to this Privacy Policy
+  </p>
+  <p>
+    It is our policy to inform the consumers to any changes to this privacy
+    policy. If there is a change, you will be notified through our Discord
+    server or News Server. The revision date of the privacy policy is at the
+    bottom of the page.
+  </p>
+</div>
+
+<div style="margin-left:126px;">
+  <Footer />
+</div>
+
+<script is:inline src="/sharedcode/global.js"></script>

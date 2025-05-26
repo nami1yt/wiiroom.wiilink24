@@ -1,0 +1,16 @@
+{
+  "name": "c-users-kingm-onedrive-documents-testing",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@contentful/rich-text-html-renderer": "^17.0.0",
+    "astro": "^5.7.11",
+    "contentful": "^11.5.20"
+  }
+}

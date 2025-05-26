@@ -1,0 +1,214 @@
+---
+import Layout from "../../layout/Layout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Sidebar from "../../components/Sidebar.astro";
+import Footer from "../../components/Footer.astro";
+import { contentfulClient } from "../../lib/contentful";
+import type { news } from "../../lib/contentful";
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+
+// Define the getStaticPaths function to pre-render all news articles
+export async function getStaticPaths() {
+  const entries = await contentfulClient.getEntries<news>({
+    content_type: "newsPost",
+  });
+
+  // Map the entries to paths
+  return entries.items
+    .filter((item) => !item.fields.unlist) // Only include published posts
+    .map((item) => ({
+      params: { slug: item.fields.slug },
+      props: { post: item.fields },
+    }));
+}
+
+// Get the post from props passed by getStaticPaths
+const { post } = Astro.props;
+
+// Simple date formatter function
+function formatDate(dateString) {
+  const date = new Date(dateString);
+  const months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  const month = months[date.getMonth()];
+  const day = date.getDate();
+  const year = date.getFullYear();
+  return `${month} ${day}th ${year}`;
+}
+
+// Convert Contentful rich text to HTML if content exists
+let contentHtml = "";
+if (post.content) {
+  contentHtml = documentToHtmlString(post.content);
+}
+
+// Parse localization tags from HTML content
+function parseLocalizedContent(html) {
+  const regex =
+    /<p>&lt;begin-localization=&quot;(.*?)&quot;&gt;<\/p>(.*?)<p>&lt;end-localization=&quot;\1&quot;&gt;<\/p>/gs;
+  let match;
+  const localizedContent = [];
+
+  while ((match = regex.exec(html)) !== null) {
+    localizedContent.push({
+      lang: match[1],
+      content: match[2].trim(),
+    });
+  }
+
+  return localizedContent;
+}
+
+// Parse float and embed tags
+function parseFloatTags(html) {
+  const embedRegex =
+    /<p>&lt;embed(.*?)&gt;<\/p>(.*?)<p>&lt;end-embed&gt;<\/p>/gs;
+  const floatRegex =
+    /<p>&lt;float(.*?)&gt;<\/p>(.*?)<p>&lt;end-float&gt;<\/p>/gs;
+  const floatLeftRegex =
+    /<p>&lt;float-left(.*?)&gt;<\/p>(.*?)<p>&lt;end-float-left&gt;<\/p>/gs;
+  const floatRightRegex =
+    /<p>&lt;float-right(.*?)&gt;<\/p>(.*?)<p>&lt;end-float-right&gt;<\/p>/gs;
+
+  let match;
+  let floatHTML = html;
+
+  // Process float tags
+  while ((match = floatRegex.exec(html)) !== null) {
+    const styleMatch = match[1].match(/style=&quot;(.*?)&quot;/);
+    const style = styleMatch
+      ? `style="${styleMatch[1]} display:flex; justify-content:space-between;"`
+      : 'style="display:flex; justify-content:space-between;"';
+
+    let content = match[2];
+    const hasFloats =
+      floatLeftRegex.test(content) || floatRightRegex.test(content);
+
+    if (hasFloats) {
+      const processedContent = content
+        .replace(
+          floatLeftRegex,
+          (m, s, c) =>
+            `<div class="float float-left" ${s.replace(/&quot;/g, "")}">${c}</div>`
+        )
+        .replace(
+          floatRightRegex,
+          (m, s, c) =>
+            `<div class="float float-right" ${s.replace(/&quot;/g, "")}">${c}</div>`
+        );
+
+      floatHTML = floatHTML.replace(
+        match[0],
+        `<div class="float-container" ${style}>${processedContent}</div>`
+      );
+    } else {
+      floatHTML = floatHTML.replace(
+        match[0],
+        `<div class="float-container" ${style}>${content}</div>`
+      );
+    }
+  }
+
+  // Process embed tags
+  while ((match = embedRegex.exec(html)) !== null) {
+    const styleMatch = match[1].match(/style=&quot;(.*?)&quot;/);
+    const style = styleMatch
+      ? `style="${styleMatch[1]} aspect-ratio: 16/10;"`
+      : 'style="aspect-ratio: 16/10;"';
+
+    let content = match[2];
+    content = content.replace(/<\/?p>/g, ""); // Remove surrounding <p> tags
+
+    floatHTML = floatHTML.replace(
+      match[0],
+      `<iframe style="width:100%; height:100%; border-radius: 8px; aspect-ratio:16/9;" title="Embed Content" ${style} src="${content}"></iframe>`
+    );
+  }
+
+  return floatHTML;
+}
+
+// Parse center tags
+function parseCenterTags(html) {
+  const centerRegex = /<p>&lt;center&gt;<\/p>(.*?)<p>&lt;end-center&gt;<\/p>/gs;
+  let match;
+  let centerHTML = html;
+
+  while ((match = centerRegex.exec(html)) !== null) {
+    centerHTML = centerHTML.replace(
+      match[0],
+      `<div class="center">${match[1]}</div>`
+    );
+  }
+
+  return centerHTML;
+}
+
+// Get localized content based on current language
+const localizedContentArray = parseLocalizedContent(contentHtml);
+const defaultLanguage = "en";
+const localizedContent = localizedContentArray.find(
+  (item) => item.lang === "en"
+);
+const defaultContent = localizedContentArray.find(
+  (item) => item.lang === defaultLanguage
+);
+
+// Use localized content if available, otherwise fall back to default or original
+contentHtml =
+  localizedContent?.content || defaultContent?.content || contentHtml;
+
+// Apply other tag parsers
+contentHtml = parseFloatTags(contentHtml);
+contentHtml = parseCenterTags(contentHtml);
+---
+
+<Layout />
+<Navbar />
+<Sidebar />
+
+<div style="padding-top:90px;padding-left:150px;">
+  <p style="font-size:60px;display:inline-block;margin:0;">
+    <b>{post.title}</b>
+  </p>
+  <p style="color:gray;font-size:27px;margin:0;">{post.description}</p>
+  <div class="lastupdated" style="vertical-align:top;">
+    <p style="background-color:#161515;padding:6px;">
+      By {post?.author?.fields?.name || "Unknown"}, Published {
+        formatDate(post.date)
+      }
+    </p>
+  </div>
+</div>
+
+{
+  post?.image?.fields?.file?.url && (
+    <div style="padding-left:150px;padding-right:10px;padding-top:20px;">
+      <img
+        src={post.image.fields.file.url}
+        alt={post.title}
+        style="max-width:100%;height:auto;"
+      />
+    </div>
+  )
+}
+
+<div class="article-content" set:html={contentHtml} />
+
+<div style="margin-left:126px;">
+  <Footer />
+</div>
+
+<script is:inline src="/sharedcode/global.js"></script>

@@ -1,0 +1,78 @@
+---
+import Layout from "../layout/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Sidebar from "../components/Sidebar.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout />
+<Navbar />
+<Sidebar />
+
+<div style="padding-top:90px;">
+  <p
+    style="text-align:center;padding:10px;padding-left:145px;background-color:#24a1ca;font-size:18px;"
+  >
+    <b>Important!</b><br />By going to external sites, you will lose access to
+    the back and refresh button. To return to the WiiLink site, you must go back
+    to rooms.
+  </p>
+</div>
+
+<div>
+  <p
+    style="text-align:center;padding:10px;padding-left:145px;background-color:#24a1ca;font-size:18px;"
+  >
+    If you'd like to suggest any fun sites to add, please direct it to
+    @kingmayro on Discord! Please also note that sites must use http, and use up
+    to JavaScript 1.5.
+  </p>
+</div>
+
+<div style="padding-left:160px;">
+  <div style="padding-top:20px;">
+    <div class="textbox" style="padding-top:20px;">
+      <img class="siteimg" src="graphics/logos/frogfind.gif" /><p
+        class="sitename"
+      >
+        <b>FrogFind!</b>
+      </p>
+      <p class="innertextbox">
+        Search anything without worrying about page compatibility or https with
+        FrogFind!, The Search Engine for Vintage Computers. (FrogFind! is text
+        only, so no CSS, or images).
+      </p>
+
+      <div class="paddingforgoto">
+        <a href="http://frogfind.com/"><p class="gotobutton">Go to Site!</p></a>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding-top:20px;">
+    <div class="textbox">
+      <img class="siteimg" src="graphics/logos/discross.gif" /><p
+        class="sitename"
+      >
+        <b>Discross</b>
+      </p>
+      <p class="innertextbox">
+        Talk to your friends in Discord from many platforms using Discross!
+        (Since the browser does not store cache or cookies, you must log in
+        every session).
+      </p>
+
+      <div class="paddingforgoto">
+        <a href="http://discross.rc24.xyz/"
+          ><p class="gotobutton">Go to Site!</p></a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="margin-left:126px;">
+  <Footer />
+</div>
+
+<script is:inline src="/sharedcode/global.js"></script>

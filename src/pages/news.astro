@@ -1,0 +1,100 @@
+---
+import Layout from "../layout/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Sidebar from "../components/Sidebar.astro";
+import Footer from "../components/Footer.astro";
+import { contentfulClient } from "../lib/contentful";
+import type { news } from "../lib/contentful";
+
+// Get news entries from Contentful
+const entries = await contentfulClient.getEntries<news>({
+  content_type: "newsPost",
+});
+
+// Format entries for display
+let postsContentful = entries.items.map((item) => {
+  const { title, slug, date, image, unlist, description, author } = item.fields;
+  return {
+    title,
+    slug,
+    date,
+    image,
+    unlist,
+    description,
+    author,
+  };
+});
+
+// Filter out unlisted posts and get latest 3
+postsContentful = postsContentful.filter((post) => !post.unlist);
+postsContentful = postsContentful.sort(
+  (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+);
+
+// Simple date formatter function
+function formatDate(dateString) {
+  const date = new Date(dateString);
+  const months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  const month = months[date.getMonth()];
+  const day = date.getDate();
+  const year = date.getFullYear();
+  return `${month} ${day}th ${year}`;
+}
+---
+
+<Layout />
+<Navbar />
+<Sidebar />
+
+<div style="padding-top:90px;padding-left:160px;">
+  {
+    postsContentful.map((post, index) => (
+      <div>
+        <div
+          class="textbox"
+          style={
+            index > 0
+              ? "padding-top:20px;margin-top:20px;"
+              : "padding-top:20px;"
+          }
+        >
+          <p class="sitename">
+            <b>{post.title}</b>
+          </p>
+          <p class="innertextbox">
+            By {post?.author?.fields?.name || "Unknown"}, Published{" "}
+            {formatDate(post.date)}
+            <br />
+            <br />
+            {post.description}
+          </p>
+
+          <div class="paddingforgoto">
+            <a href={`/news/${post.slug}`}>
+              <p class="gotobutton">Read the Article!</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    ))
+  }
+</div>
+
+<div style="margin-left:126px;">
+  <Footer />
+</div>
+
+<script is:inline src="/sharedcode/global.js"></script>

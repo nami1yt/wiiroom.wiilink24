@@ -1,0 +1,119 @@
+---
+import Layout from "../layout/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import Sidebar from "../components/Sidebar.astro";
+
+const socialColors = {
+  discord: "#5865F2",
+  twitter: "#1DA1F2",
+  github: "#333333",
+  youtube: "#FF0000",
+  facebook: "#1877F2",
+  instagram: "#E4405F",
+  linkedin: "#0A66C2",
+  reddit: "#FF4500",
+  twitch: "#9146FF",
+  default: "#777777",
+};
+
+const partners = [
+  {
+    name: "Sudomemo",
+    logo: "graphics/logos/sudomemo_welcome_logo.png",
+    logoClass: "siteimgsudo",
+    description:
+      "Share your Flipnotes with the world! For Nintendo DSi and 3DS. For more information, visit www.sudomemo.net.",
+    partnership:
+      "This partnership includes benefits for Sudomemo and Wii Room users; claim a promotional Sudomemo ticket from the Sudomemo Room. For more information, visit www.flipnot.es/tickets.",
+    socials: [
+      {
+        platform: "discord",
+        handle: "discord.gg/sudomemo",
+      },
+      {
+        platform: "twitter",
+        handle: "@Sudomemo",
+      },
+    ],
+  },
+  {
+    name: "Famicom CD",
+    logo: "graphics/logos/famicomcdlogo.png",
+    logoClass: "siteimgfami",
+    description:
+      "A group specializing in creating non-profit video games and video game modifications/hacks, such as Super Mario Bros. CD. For more information, visit https://famicomcd.github.io.",
+    partnership:
+      "This partnership will include Wii Room exclusive content such as exclusive videos or shows.",
+    socials: [
+      {
+        platform: "discord",
+        handle: "discord.gg/wpSGt5aTuw",
+      },
+      {
+        platform: "twitter",
+        handle: "@FamicomCD",
+      },
+    ],
+  },
+];
+
+function getSocialColor(platform) {
+  return socialColors[platform] || socialColors.default;
+}
+---
+
+<Layout />
+<Navbar />
+<Sidebar />
+
+<div style="padding-top:70px;padding-left:160px;">
+  {
+    partners.map((partner, index) => (
+      <div style={index > 0 ? "padding-top:20px;" : "padding-top:50px;"}>
+        <div class="textbox" style="padding-top:20px;">
+          <img
+            class={partner.logoClass}
+            style="padding-bottom:20px;"
+            src={partner.logo}
+            alt={partner.name + " logo"}
+          />
+          <p class="innertextbox" style="margin:0;">
+            {partner.description}
+            <br />
+            <br />
+            {partner.partnership}
+          </p>
+
+          <div style="padding-top:20px;">
+            <div class="innertextbox" style="margin:0;">
+              {partner.socials.map((social, socialIndex) => (
+                <p
+                  class="social"
+                  style={`background-color: ${getSocialColor(social.platform)}; padding:8px; ${
+                    socialIndex < partner.socials.length - 1
+                      ? "padding-right:20px;"
+                      : ""
+                  }`}
+                >
+                  <img
+                    style="width:32px;height:auto;vertical-align:middle;display:inline;padding:0px 5px 5px 0px;"
+                    src={`graphics/logos/${social.platform}.png`}
+                    alt={social.platform + " logo"}
+                  />
+                  {social.handle}
+                </p>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    ))
+  }
+</div>
+
+<div style="margin-left:126px;">
+  <Footer />
+</div>
+
+<script is:inline src="/sharedcode/global.js"></script>

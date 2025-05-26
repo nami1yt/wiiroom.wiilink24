@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/sharedcode/common.css" />
+
+    <style>
+      body {
+        margin: 0;
+        background-color: #1e1e1e;
+        color: white;
+        font-size: 20px;
+      }
+
+      a {
+        text-decoration: none;
+        color: white;
+      }
+
+      .nav {
+        height: 85px;
+        width: 96%;
+        background-color: #161515;
+        padding: 0px 20px;
+        position: fixed;
+        z-index: 2;
+      }
+
+      .browserctrl {
+        padding-top: 13px;
+        width: 55px;
+        height: auto;
+        float: right;
+      }
+
+      .sidebar {
+        height: 800px;
+        width: 180px;
+        background-color: #161515;
+        position: fixed;
+      }
+
+      .navbutton {
+        background-color: #252424;
+        display: block;
+        padding: 5px;
+      }
+
+      .navbutton:hover {
+        background-color: #3e3d3d;
+      }
+
+      .textbox {
+        background-color: #161515;
+        padding: 20px;
+        width: 598px;
+      }
+
+      .innertextbox {
+        margin: 0;
+      }
+
+      .sitename {
+        font-size: 50px;
+        vertical-align: top;
+        margin: 0;
+        display: inline;
+      }
+
+      .siteimgsudo {
+        display: inline;
+        vertical-align: middle;
+        width: auto;
+        height: 80px;
+        padding-left: 10%;
+      }
+
+      .siteimgfami {
+        display: inline;
+        vertical-align: middle;
+        width: auto;
+        height: 90px;
+        padding-left: 15%;
+      }
+
+      .siteimg {
+        display: inline;
+        vertical-align: middle;
+        width: auto;
+        height: 80px;
+        padding-right: 10px;
+      }
+
+      .gotobutton {
+        width: 94%;
+        font-size: 25px;
+        text-align: center;
+        background-color: #24a1ca;
+        padding: 15px;
+      }
+
+      .gotobutton:hover {
+        opacity: 0.8;
+      }
+
+      .gotobutton:active {
+        opacity: 0.5;
+      }
+
+      .paddingforgoto {
+        padding-left: 50px;
+        padding-right: 50px;
+      }
+
+      .social {
+        display: inline;
+        padding-top: 10px;
+      }
+
+      .wave-container {
+        display: inline-block;
+        padding-top: 15px;
+        font-size: 27px;
+      }
+
+      .wave {
+        display: inline-block;
+        white-space: pre;
+      }
+
+      .wave span {
+        position: relative;
+        display: inline-block;
+        font-size: 30px;
+      }
+
+      .wave span:hover {
+        color: #0060df;
+      }
+
+      .image-container {
+        position: relative;
+        display: inline-block;
+      }
+
+      .image-container img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      .image-container .image-text {
+        position: absolute;
+        top: 10px;
+        left: 40px;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        padding-bottom: 80px;
+        z-index: 1;
+      }
+
+      .homebuttons {
+        padding-left: 145px;
+      }
+
+      .largebutton {
+        width: 522px;
+        padding-left: 10px;
+        height: auto;
+      }
+
+      .largebutton:hover {
+        width: 538px;
+        height: 93px;
+        padding-left: 2px;
+        padding-right: 10px;
+      }
+
+      .largebutton:active {
+        width: 518px;
+        height: 83px;
+        padding: 5px 20px 5px 12px;
+        opacity: 0.7;
+      }
+
+      .extraslargebutton {
+        position: relative;
+        width: 522px;
+        padding-left: 10px;
+        height: auto;
+      }
+
+      .extraslargebutton:hover {
+        width: 538px;
+        height: 52px;
+        padding-left: 2px;
+        padding-right: 10px;
+      }
+
+      .extraslargebutton:active {
+        width: 518px;
+        height: 41px;
+        padding: 5px 20px 6px 11px;
+        opacity: 0.7;
+      }
+
+      .servicessmallbutton {
+        width: 250px;
+        height: 52px;
+        padding-left: 10px;
+        padding-right: 8px;
+      }
+
+      .servicessmallbutton:hover {
+        width: 264px;
+        padding-left: 4px;
+        padding-right: 0px;
+      }
+
+      .servicessmallbutton:active {
+        width: 232px;
+        height: 41px;
+        padding: 6px 14px 4px 22px;
+        opacity: 0.7;
+      }
+
+      .creditssmallbutton {
+        width: 250px;
+        height: 52px;
+        padding-left: 8px;
+      }
+
+      .creditssmallbutton:hover {
+        width: 264px;
+        padding-left: 0px;
+      }
+
+      .creditssmallbutton:active {
+        width: 232px;
+        height: 41px;
+        padding: 6px 0 4px 15px;
+        opacity: 0.7;
+      }
+
+      .status {
+        vertical-align: middle;
+        width: 30px;
+        height: auto;
+      }
+
+      .lastupdated {
+        padding-top: 6px;
+        padding-right: 10px;
+        display: inline-block;
+      }
+      
+      .article-content {
+        padding-left: 150px;
+        padding-right: 10px;
+      }
+      
+      .article-content h2 {
+        font-size: 35px;
+        margin: 0;
+        padding-top: 20px;
+      }
+      
+      .article-content img {
+        max-width: 100%;
+        height: auto;
+      }
+      
+      #hoverbox {
+        display: inline-block;
+        padding: 20px 0;
+      }
+      
+      .services {
+        display: inline;
+        padding-right: 3px;
+      }
+
+      @media screen and (max-width: 609px) {
+        .textbox {
+          padding: 20px;
+          width: 374px;
+        }
+        
+        .sitename {
+          float: none;
+          display: block;
+        }
+        
+        .paddingforgoto {
+          padding-left: 40px;
+          padding-right: 50px;
+        }
+        
+        .siteimgsudo {
+          height: 60px;
+          padding-left: 2%;
+        }
+        
+        .siteimgfami {
+          height: 80px;
+          padding-left: 2%;
+        }
+        
+        .social {
+          display: block;
+          padding-top: 0;
+        }
+        
+        .homebuttons {
+          padding-left: 33px;
+        }
+        
+        .lastupdated {
+          float: none;
+          padding-top: 0;
+          padding-right: 0;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <slot />
+  </body>
+</html>

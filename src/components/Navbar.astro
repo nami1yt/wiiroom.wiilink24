@@ -1,0 +1,52 @@
+<div class="nav">
+  <a href="/"
+    ><img
+      class="navlogo"
+      style="padding-top:10px;height:55px;width:auto;"
+      src="/graphics/logos/logo.png"
+    /></a
+  >
+
+  <div class="ctrlposition" style="display:inline-block;">
+    <a href=""
+      ><img
+        class="browserctrlfresh"
+        onclick="refreshPage()"
+        src="/graphics/buttons/refresh.png"
+      /></a
+    >
+    <img
+      class="browserctrldiv"
+      src="/graphics/buttons/divider.jpg"
+    />
+    <a href=""
+      ><img
+        class="browserctrl"
+        onclick="goForward()"
+        src="/graphics/buttons/forward.png"
+      /></a
+    >
+    <a href=""
+      ><img
+        class="browserctrl"
+        onclick="goBack()"
+        src="/graphics/buttons/back.png"
+      /></a
+    >
+  </div>
+</div>
+
+
+<script is:inline>
+    function refreshPage() {
+      location.reload();
+    }
+  
+    function goBack() {
+      history.back();
+    }
+  
+    function goForward() {
+      history.forward();
+    }
+  </script>

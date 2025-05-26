@@ -1,0 +1,243 @@
+---
+import Layout from "../layout/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Sidebar from "../components/Sidebar.astro";
+import Footer from "../components/Footer.astro";
+
+const serviceCategories = [
+  {
+    title: "WiiConnect24 Services",
+    description: "Services originally powered by WiiConnect24, now revived by us!",
+    backgroundColor: "#24a1ca",
+    services: [
+      {
+        name: "Check Mii Out Channel",
+        icon: "graphics/status/miicontest_icon.png",
+        description: "Share Miis with the community and enter them in contests.",
+        status: "good",
+        statusText: "This service is working properly!"
+      },
+      {
+        name: "Everybody Votes Channel",
+        icon: "graphics/status/democracy_icon.png",
+        description: "Answer questions and tell the world your answer in national and worldwide polls!",
+        status: "good",
+        statusText: "This service is working properly!"
+      },
+      {
+        name: "Forecast Channel",
+        icon: "graphics/status/forecast_icon.png",
+        description: "Check the weather from anywhere right from your Wii!",
+        status: "good",
+        statusText: "This service is working properly!"
+      },
+      {
+        name: "News Channel",
+        icon: "graphics/status/news_icon.png",
+        description: "Read the global news on your Wii!",
+        status: "good",
+        statusText: "This service is working properly!"
+      },
+      {
+        name: "Nintendo Channel",
+        icon: "graphics/status/nintendo_icon.png",
+        description: "Watch videos, get information about games, recommend titles, download DS software, and more.",
+        status: "good",
+        statusText: "This service is working properly!"
+      },
+      {
+        name: "Wii Message Board",
+        icon: "graphics/buttons/email.png",
+        description: "Communicate with other Wiis again!",
+        status: "good",
+        statusText: "This service is working properly!",
+        hasLink: false
+      },
+      {
+        name: "Wii Speak Channel",
+        icon: "graphics/buttons/mic.png",
+        description: "Voice chat with people on your Wii!",
+        status: "good",
+        statusText: "This service is working properly!"
+      }
+    ]
+  },
+  {
+    title: "Regional Exclusive Services",
+    description: "Japanese and European services, now localized and enhanced for the whole wide world!",
+    backgroundColor: "#d05d5d",
+    services: [
+      {
+        name: "Food Channel",
+        icon: "graphics/status/demae_icon.png",
+        description: "The Food Channel, for all your culinary needs!",
+        status: "good",
+        statusText: "This service is working properly!"
+      },
+      {
+        name: "Metroid Prime 3 Preview",
+        icon: "graphics/status/film_icon.png",
+        description: "Watch some preview stuff about Metroid Prime 3!",
+        status: "error",
+        statusText: "This service's development has been halted."
+      },
+      {
+        name: "Photo Prints Channel",
+        icon: "graphics/status/digicam_icon.png",
+        description: "Create albums and business cards with your photos and Mii characters.",
+        status: "good",
+        statusText: "This service is working properly!"
+      },
+      {
+        name: "TV Guide Channel",
+        icon: "graphics/status/tvguide_icon.png",
+        description: "Get live EPG guides right on your Wii!",
+        status: "working",
+        statusText: "This service is still under development and beta testing!"
+      },
+      {
+        name: "Wii Room",
+        icon: "graphics/status/room_icon.png",
+        description: "Stream all sorts of content from videos to promotional images right onto your Wii!",
+        status: "good",
+        statusText: "This service is working properly!"
+      },
+      {
+        name: "Wii Room Anywhere",
+        icon: "graphics/status/room_icon.png",
+        description: "Bring videos and coupons from Wii Room on the go with your Nintendo DSi!",
+        status: "working",
+        statusText: "This service is still under development and beta testing!",
+        hasLink: false
+      },
+      {
+        name: "Youtube (Wii)",
+        icon: "graphics/status/youtube_icon.png",
+        description: "Watch content from Youtube on your Wii again!",
+        status: "error",
+        statusText: "This service's development has been halted."
+      }
+    ]
+  },
+  {
+    title: "Miscellaneous Services",
+    description: "Fun extra services you can enjoy with WiiLink!",
+    backgroundColor: "#3C693A",
+    services: [
+      {
+        name: "Animal Crossing (Wii) DLC",
+        icon: "graphics/status/leaf_icon.png",
+        description: "Get special items as DLC delivered to you in Animal Crossing: City Folk on the Wii!",
+        status: "good",
+        statusText: "This service is working properly!"
+      },
+      {
+        name: "DoujinSoft",
+        icon: "graphics/status/truck_icon.png",
+        description: "Send content made in WarioWare DIY directly to your Wii!",
+        status: "good",
+        statusText: "This service is working properly!"
+      },
+      {
+        name: "Game Nights",
+        icon: "graphics/status/gamenight_icon.png",
+        description: "Play a Wii or DS game on Wiimmfi/WiiLink WFC with the community every week!",
+        status: "good",
+        statusText: "These events are still currently ongoing!",
+        hasLink: false
+      },
+      {
+        name: "LinkTag",
+        icon: "graphics/status/tag_icon.png",
+        description: "Enjoy a GamerTag on the Wii with LinkTag!",
+        status: "working",
+        statusText: "This service is still under development!"
+      },
+      {
+        name: "RSSMii",
+        icon: "graphics/status/rss_icon.png",
+        description: "Get RSS updates on your Wii!",
+        status: "good",
+        statusText: "This service is working properly!",
+        hasLink: false
+      },
+      {
+        name: "WiiLink Wi-Fi Connection",
+        icon: "graphics/status/wfc_icon.png",
+        description: "Play with people in online games on the Wii again with WiiLink WFC!",
+        status: "good",
+        statusText: "This service is working properly!",
+        hasLink: false
+      }
+    ]
+  }
+];
+
+// Helper function to get status image
+function getStatusImage(status) {
+  const statusImages = {
+    'good': 'graphics/buttons/good.png',
+    'working': 'graphics/buttons/working.png',
+    'error': 'graphics/buttons/error.png'
+  };
+  return statusImages[status] || statusImages.error;
+}
+---
+
+<Layout />
+<Navbar />
+<Sidebar />
+
+{serviceCategories.map((category, categoryIndex) => (
+  <div>
+    <div style={`padding-top:${categoryIndex === 0 ? '70px' : '50px'};`}>
+      <p style={`text-align:center;padding:10px;padding-left:145px;background-color:${category.backgroundColor};font-size:18px;`}>
+        <b>{category.title}</b><br />{category.description}
+      </p>
+    </div>
+
+    <div style="padding-left:160px;">
+      {category.services.map((service) => (
+        <div class="services" style="padding-top:20px;display:inline-block;">
+          <div class="textbox" style="padding-top:20px;">
+            <img 
+              class="siteimg" 
+              src={service.icon} 
+              alt={`${service.name} icon`}
+              style="height:50px;width:auto;" 
+            />
+            <p class="sitename">
+              <b>{service.name}</b>
+            </p>
+            <p class="innertextbox" style="margin:0;">
+              {service.description}
+            </p>
+
+            <div style="padding-top:10px;"></div>
+            <p class="innertextbox" style="margin:0;">
+              <img 
+                class="status" 
+                src={getStatusImage(service.status)} 
+                alt={service.statusText}
+                style="width:24px;height:auto;"
+              />
+              {service.statusText}
+            </p>
+
+            {service.hasLink === false ? null : (
+              <div class="paddingforgoto">
+                {/* <a href="http://wiiroom.wiilink24.com/extras.html"><p class="gotobutton">Click here for more information!</p></a> */}
+              </div>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+))}
+
+<div style="margin-left:126px;">
+  <Footer />
+</div>
+
+<script is:inline src="/sharedcode/global.js"></script>
